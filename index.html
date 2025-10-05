@@ -10,11 +10,24 @@
 
 </head>
 <body>
-    <div>Olá mundo</div>
-
         <div id="app">
             <h1>{{ message }}</h1>
             <input type="text" v-model="message">
+            <div id="product-display">
+                <div class="product-container">
+                    <div class="product-image">
+                        <!--imagem do produro-->
+                        <img :src="image" alt="">
+                        <img :src="image2" alt="">
+                        
+                    </div>
+                    <div class="product-info">
+                        <!--informação do produto-->
+                        <h2>Casio f91w </h2>
+                        <h2>Casio w800h </h2>
+                    </div>
+                </div>
+            </div>
         </div>
             
     <script>
@@ -24,7 +37,9 @@
         setup() {
         const message = ref('Hello vue! in id app')
         return {
-            message
+            message,
+            image: ref ("./assets/images/relogio-casio-f91w.jpg"),
+            image2: ref ("./assets/images/relogio-casiow800h.webp")
         }
         }
     }).mount('#app')
